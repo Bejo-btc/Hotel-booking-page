@@ -1,0 +1,376 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+:root {
+/*Neutral*/
+--Neutral-900: hsl(33, 15%, 15%);
+--Neutral-800: hsl(33, 22%, 20%);
+--Neutral-700: hsl(32, 20%, 29%);
+--Neutral-600: hsl(33, 17%, 41%);
+--Neutral-400: hsl(36, 22%, 86%);
+--Neutral-200: hsl(30, 24%, 93%);
+--Neutral-100: hsl(35, 60%, 96%);
+--Neutral-50: hsl(40, 60%, 98%);
+--Neutral-0: hsl(0, 0%, 100%);
+
+/* Sun*/
+
+--Sun-500: hsl(42, 83%, 58%);
+--Sun-300: hsl(44, 84%, 75%);
+--Sun-200: hsl(45, 100%, 74%);
+--Sun-50: hsl(41, 100%, 93%);
+
+/*Terracotta */
+
+--Terracotta-700: hsl(15, 69%, 37%);
+--Terracotta-600: hsl(15, 74%, 41%);
+--Terracotta-500: hsl(18, 62%, 47%);
+--Terracotta-400: hsl(22, 72%, 56%);
+
+/* Blue */
+--Blue-500: hsl(230, 49%, 56%);
+
+/*Rose*/
+--Rose-500: hsl(340, 48%, 52%);
+
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Fraunces', serif;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar{
+   background-color: var(--Neutral-100);
+   min-width:200px;
+   height: 100vh;
+   display: flex;
+   justify-content: space-between;
+   flex-direction: column;
+   border-right: 1px solid #ccc;
+   position: relative;
+}
+@media (max-width:767px) {
+   .container{
+      flex-direction:column;
+   }
+}
+
+.sidebar .logo{
+   display: block;
+   width: 100%;
+   border-bottom: 1px solid #ccc;
+}
+
+@media (max-width:767px) {
+   .sidebar  .logo{
+      width:60%;
+   }
+}
+
+.sidebar .menu {
+   border: 1px solid #ccc; 
+}
+
+.sidebar ul a{
+   color:var(--Neutral-800);
+}
+
+
+@media (max-width:767px) {
+   .sidebar ul{
+      display: none;
+   }
+}
+
+@media (min-width:767px) {
+   .sidebar  .mobile-logo .menu {
+       display: none;
+   }
+}
+
+@media (max-width: 767px) {
+  .sidebar .mobile-logo .menu:hover ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.12);
+    z-index: 10;
+  }
+}
+
+
+.sidebar ul li{
+   position:relative ;
+   border-radius: 8px;
+   transition: 0.5s;
+   /*counter-increment: count;*/
+}
+
+.sidebar ul li.active,
+.sidebar ul li:hover{
+   background-color:white;
+   border: 2px solid var(--Terracotta-500);
+}
+
+.sidebar ul li.active::after{
+   content: "0";
+   position:absolute ;
+   width: 15px;
+   height: 15px;
+   border-radius: 50%;
+   right: 10px;
+   top: 50%;
+   text-align: center;
+   color: white;
+   font-weight: bold;
+   transform: translateY(-50%);
+   background-color: red;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.sidebar > .data .mobile-logo{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.card{
+   background-color: var(--Sun-300);
+   position:relative ;
+   overflow: hidden;
+  background: linear-gradient(135deg, var(--Sun-200) 0%, var(--Sun-200) 50% ,var(--Sun-200) 100%);
+}
+
+.card span{
+   color: var(--Neutral-800);
+}
+
+.card img{
+   position:absolute;
+   top:-25px;
+   right: -15px;
+   z-index: 3;
+}
+
+.sidebar .text{
+   color: var(--Neutral-900);
+   border-top:1px solid #ccc;
+   word-spacing: 5px;
+}
+
+.content{
+   display: flex;
+   align-items:center ;
+   justify-content: space-between;
+   width: 650px;
+   max-width: 100%;
+}
+
+
+@media (max-width:767px) {
+   .content {
+     width: 400px;
+   }
+}
+
+
+.content .btn input{
+   background-color:var(--Neutral-100);
+   border: 1px solid #d5d5d5;
+   transition: 0.3s;
+}
+
+.content .btn input:hover{
+    border: 2px solid var(--Terracotta-500);
+}
+.content button{
+  transition: 0.3s;
+}
+
+.content button:hover{
+    outline: 2px solid var(--Terracotta-500);
+    border: 2px solid var(--Neutral-100);
+}
+
+.content h1 span{
+   color: var(--Rose-500);
+}
+
+.booking{
+background-color: var(--Neutral-100);
+}
+.move{
+   position: relative;
+}
+
+.receipt{
+   transform: rotate(-4deg);
+   transition: 0.5s;
+   position: relative;
+   z-index: 3;
+
+}
+.move:hover .receipt{
+   transform: rotate(15deg)  translateX(-30px);
+}
+
+@media (max-width:767px) {
+   .move {
+      flex-direction:column-reverse;
+   }
+}
+
+@media (max-width:767px) {
+   .content {
+      flex-direction:column ;
+      
+   }
+}
+
+
+
+.receipt span{
+   color:var(--Neutral-600);
+}
+
+.receipt > div:not(:last-child) {
+   border-bottom: 1px solid #ddd;
+}
+.receipt > div:nth-last-child(2) {
+   border-bottom: none;
+}
+
+.welcome {
+   background-color: var(--Terracotta-700);
+   transform: rotate(4deg);
+   transition: 0.5s;
+   box-shadow: 3px 15px 20px var(--Terracotta-400);
+   position: relative;
+   z-index: 3;
+   display: flex;
+   justify-content: space-between;
+   flex-direction: column;
+}
+.welcome > span,
+.welcome h1,
+.welcome .room{
+  color:var(--Neutral-400);
+}
+
+.welcome .text{
+   color: var(--Sun-200);
+}
+
+.welcome p{
+   color: var(--Sun-50);
+}
+
+.move:hover .welcome{
+transform: rotate(-15deg)  translate(30px);
+}
+
+.move > img{
+   position: absolute;
+   width: 80px;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%,-50%);
+   z-index: 1;
+}
+
+.hotel-data{
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+   align-items: center;
+   gap: 10px;
+}
+
+
+.box {
+   position: relative;
+   counter-increment: numbers;
+   width: 300px;
+}
+
+.title{
+   position: relative;
+}
+
+
+.box .title::after{
+   color:var(--Terracotta-500);
+}
+
+.box .title  img{
+   background-color:var(--Terracotta-600);
+}
+
+.box .info {
+   position: relative;
+}
+.box .info > img{
+   background-color: var(--Blue-500);
+}
+
+.box .breakfast{
+   position: relative;
+}
+
+.box .breakfast > img{
+   background-color:var(--Terracotta-500);
+}
+
+.box .title::after,
+.box .info::after,
+.box .breakfast::after{
+   content:"0" counter(numbers);
+   position: absolute;
+   right:10px;
+   top: 50%;
+   transform: translateY(-50%);
+}
+
+
+.box .wifi::after{
+   color: var(--Blue-500);
+}
+
+.box .breakfast::after {
+   color: var(--Rose-500);
+}
+
+.box .breakfast img{
+   background-color:var(--Rose-500);
+}
+
+.box .wifi  span:first-child{
+   color: var(--Neutral-600);
+}
+
+.box .copy{
+   color:var(--Neutral-600);
+   border:1px solid #ccc;
+}
