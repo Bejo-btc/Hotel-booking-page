@@ -57,7 +57,7 @@ ul {
 
 .sidebar{
    background-color: var(--Neutral-100);
-   min-width:200px;
+   min-width:300px;
    height: 100vh;
    display: flex;
    justify-content: space-between;
@@ -184,7 +184,7 @@ ul {
    display: flex;
    align-items:center ;
    justify-content: space-between;
-   width: 650px;
+   width: 700px;
    max-width: 100%;
 }
 
@@ -220,6 +220,31 @@ ul {
 
 .booking{
 background-color: var(--Neutral-100);
+  height: 100vh;
+
+}
+
+.booking .hover{
+   display: block;
+   width:fit-content;
+   margin: 10px auto;
+   padding: 0 15px;
+   position: relative;
+   text-transform: capitalize;
+   color: var(--Neutral-700);
+}
+.booking .hover img {
+   position: absolute;
+   top:50%;
+   transform: translateY(-50%)
+}
+
+.booking .hover img:first-child{
+   left: -10px;
+}
+
+.booking .hover img:last-child{
+   right: -10px;
 }
 .move{
    position: relative;
@@ -272,6 +297,12 @@ background-color: var(--Neutral-100);
    display: flex;
    justify-content: space-between;
    flex-direction: column;
+}
+
+.welcome .welc-sun{
+   position: absolute;
+   right:25px ;
+   top: 25px;
 }
 .welcome > span,
 .welcome h1,
