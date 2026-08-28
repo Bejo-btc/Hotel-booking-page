@@ -184,7 +184,7 @@ ul {
    display: flex;
    align-items:center ;
    justify-content: space-between;
-   width: 700px;
+   width: 900px;
    max-width: 100%;
 }
 
@@ -343,13 +343,12 @@ transform: rotate(-15deg)  translate(30px);
 .box {
    position: relative;
    counter-increment: numbers;
-   width: 300px;
+   max-width: 300px;
 }
 
 .title{
    position: relative;
 }
-
 
 .box .title::after{
    color:var(--Terracotta-500);
